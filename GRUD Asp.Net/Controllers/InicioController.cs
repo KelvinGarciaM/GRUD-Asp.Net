@@ -83,10 +83,11 @@ namespace GRUD_Asp.Net.Controllers
                     contacto.FechaCreacion = DateTime.Now;
                     _contexto.Update(contacto);
                     await _contexto.SaveChangesAsync();
-                    //return RedirectToAction(nameof(Index));//Para que me direccione al index de este controlador
+                    return RedirectToAction(nameof(Index));//Para que me direccione al index de este controlador
                 }
 
             }
+            
             return View(contacto);
         }
 

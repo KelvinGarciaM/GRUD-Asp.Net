@@ -1,49 +1,60 @@
 ﻿<!--Para poder acceder a la entidad de contacto-->
 @model GRUD_Asp.Net.Models.Contact
+
 @{
-    ViewData["Title"] = "_EditContact";
+    ViewData["Title"] = "Detalles parcial";
 }
 
-<h1>Edit</h1>
-<hr />
-<h4>Contacto</h4>
-<div class="row">
-    <div class="col-12">
-        <form asp-action="Editar">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="@Model.Id" class="control-label"></label>
-                <input asp-for="@Model.Id" class="form-control" readonly />
-                <span asp-validation-for="@Model.Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Nombre" class="control-label"></label>
-                <input asp-for="@Model.Nombre" class="form-control" />
-                <span asp-validation-for="@Model.Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Email" class="control-label"></label>
-                <input asp-for="@Model.Email" class="form-control" />
-                <span asp-validation-for="@Model.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Telefono" class="control-label"></label>
-                <input asp-for="@Model.Telefono" class="form-control" />
-                <span asp-validation-for="@Model.Telefono" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Celular" class="control-label"></label>
-                <input asp-for="@Model.Celular" class="form-control" />
-                <span asp-validation-for="@Model.Celular}" class="text-danger"></span>
-            </div>
-            <div class="form-group mt-5">
-                <input type="submit" value="Save" class="btn btn-primary mx-2" />
-            </div>
-        </form>
+
+
+<div>
+    <div class="card-header bg-dark">
+
+        <h3 class="text-white">
+            <strong>Detalles contacto</strong>
+        </h3>
     </div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+    </dl>
 </div>
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+<div>
+    @* <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pencil-fill mx-2 mb-1"></i>Editar</a>
+    <a class="btn btn-primary" asp-action="Index"><i class="bi bi-arrow-left-square mx-2 mt-1"></i>Volver</a>*@
+</div>
