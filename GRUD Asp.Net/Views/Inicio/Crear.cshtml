@@ -1,0 +1,58 @@
+﻿<!--Para poder acceder a la entidad de contacto-->
+@model GRUD_Asp.Net.Models.Contact
+@{
+    ViewData["Title"] = "Crear Nuevo contacto";
+}
+
+<!--Carta con los contactos-->
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <!--header de la carta-->
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Agregar Usuario</strong></h3>
+
+                
+            </div>
+            <!--Body de la carta-->
+            <div class="card-body">
+                <form asp-action="Crear" >
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <!--Label y input de nombre-->
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" placeholder="Ingresar el nombre" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Telefono-->
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" placeholder="Ingresar el Telefono" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Celular-->
+                    <div class="form-group">
+                        <label asp-for="Celular" class="control-label"></label>
+                        <input asp-for="Celular" class="form-control" placeholder="Ingresar el Celular" />
+                        <span asp-validation-for="Celular" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Email-->
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" placeholder="Ingresar el Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                 
+                    <!--Btn enviar datos-->
+                    <div class="form-floating mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto"><i class="bi bi-person-fill">Crear Usuario</i></button>
+                    </div>
+                </form>
+                <a asp-controller="Inicio" asp-action="Index" >Regresar</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

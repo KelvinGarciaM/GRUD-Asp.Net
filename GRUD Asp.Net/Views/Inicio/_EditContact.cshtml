@@ -1,0 +1,71 @@
+﻿<!--Para poder acceder a la entidad de contacto-->
+@model GRUD_Asp.Net.Models.Contact
+@{
+    ViewData["Title"] = "_EditContact";
+}
+
+<h1 class="text-center"> Editar contacto</h1>
+
+
+<!--Carta con los contactos-->
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <!--header de la carta-->
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Editar Usuario</strong></h3>
+                <script>
+
+                </script>
+
+            </div>
+            <!--Body de la carta-->
+            <div class="card-body">
+                <form asp-action="Editar" method="post">
+
+                    <input type="hidden" name="id" value="@Model.Id"  readonly  />
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <!--Label y input de nombre-->
+                    <div class="form-group">
+                        <label asp-for="@Model.Nombre" class="control-label"></label>
+                        <input asp-for="@Model.Nombre" class="form-control" placeholder="Ingresar el nombre" />
+                        <span asp-validation-for="@Model.Nombre" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Telefono-->
+                    <div class="form-group">
+                        <label asp-for="@Model.Telefono" class="control-label"></label>
+                        <input asp-for="@Model.Telefono" class="form-control" placeholder="Ingresar el Telefono" />
+                        <span asp-validation-for="@Model.Telefono" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Celular-->
+                    <div class="form-group">
+                        <label asp-for="@Model.Celular" class="control-label"></label>
+                        <input asp-for="@Model.Celular" class="form-control" placeholder="Ingresar el Celular" />
+                        <span asp-validation-for="@Model.Celular" class="text-danger"></span>
+                    </div>
+                    <!--Lbael y input de Email-->
+                    <div class="form-group">
+                        <label asp-for="@Model.Email" class="control-label"></label>
+                        <input asp-for="@Model.Email" class="form-control" placeholder="Ingresar el Email" />
+                        <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                    </div>
+
+                    <!--Btn enviar datos-->
+                    <div class="form-floating mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto"><i class="bi bi-pencil-fill">Editar Usuario</i></button>
+                    </div>
+                </form>
+                <a asp-controller="Inicio" asp-action="Index">Regresar</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
